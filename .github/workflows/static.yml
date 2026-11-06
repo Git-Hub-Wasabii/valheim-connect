@@ -26,8 +26,10 @@
 
             background:
                 linear-gradient(
-                    rgba(12, 19, 14, 0.68),
-                    rgba(12, 19, 14, 0.85)
+                    180deg,
+                    rgba(10, 16, 13, 0.35) 0%,
+                    rgba(10, 16, 13, 0.65) 45%,
+                    rgba(10, 16, 13, 0.88) 100%
                 ),
                 url("https://img2.storyblok.com/fit-in/1000x700/f/157036/2132x1194/3754a641ab/carousel-bg.jpg")
                 center center / cover fixed no-repeat;
@@ -37,11 +39,11 @@
 
         .card {
             width: 100%;
-            max-width: 540px;
-            padding: 55px 35px;
+            max-width: 560px;
+            padding: 50px 35px;
             text-align: center;
 
-            background: rgba(21, 29, 22, 0.88);
+            background: rgba(21, 29, 22, 0.90);
             border: 1px solid rgba(190, 157, 91, 0.55);
             border-radius: 5px;
 
@@ -86,7 +88,7 @@
         .description {
             color: #c4c0ae;
             font-size: 15px;
-            line-height: 1.8;
+            line-height: 1.9;
             margin-bottom: 30px;
         }
 
@@ -119,23 +121,78 @@
                 #b18e50,
                 #8b6936
             );
+
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+
+            box-shadow:
+                0 6px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .connect-button:active {
+            transform: translateY(0);
+        }
+
+        .instructions {
+            margin: 28px auto 0;
+            padding: 18px 20px;
+
+            background: rgba(0, 0, 0, 0.20);
+            border: 1px solid rgba(190, 157, 91, 0.18);
+            border-radius: 4px;
+
+            color: #aaa995;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .instructions-title {
+            color: #c6a66b;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .instructions strong {
+            color: #e0d1ac;
+            font-weight: normal;
         }
 
         .server-info {
             margin-top: 30px;
             padding-top: 22px;
+
             border-top: 1px solid rgba(190, 157, 91, 0.25);
+
             color: #aaa995;
             font-size: 12px;
             line-height: 2;
             letter-spacing: 1px;
         }
 
+        .server-label {
+            color: #9b895f;
+            font-size: 10px;
+            letter-spacing: 3px;
+            margin-top: 12px;
+        }
+
         .server-info strong {
             color: #d5c39a;
             font-weight: normal;
+        }
+
+        .server-subtitle {
+            color: #888c7b;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .server-separator {
+            width: 40px;
+            height: 1px;
+            background: #6c5b39;
+            margin: 18px auto;
         }
 
         .footer {
@@ -147,8 +204,26 @@
         }
 
         @media (max-width: 480px) {
+            body {
+                padding: 16px;
+                background-attachment: scroll;
+            }
+
             .card {
-                padding: 40px 22px;
+                padding: 38px 20px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .connect-button {
+                padding: 15px 22px;
+                font-size: 13px;
+            }
+
+            .instructions {
+                padding: 16px 12px;
             }
         }
     </style>
@@ -164,28 +239,69 @@
             Welcome, Viking
         </div>
 
-        <h1>Valheim<br>Kampung Server</h1>
+        <h1>
+            Valheim<br>
+            Kampung Server
+        </h1>
 
         <div class="divider"></div>
 
         <p class="description">
-            Beyond the tenth world lies our little kampung.<br>
-            Gather your kin, sharpen your axes,<br>
-            and prepare for the journey ahead.
+            Far beyond the mainland, a humble island<br>
+            stands against an endless sea.<br><br>
+
+            Here, we built our home, weathered the storms,<br>
+            and made a kampung of our own.<br><br>
+
+            Come ashore, fellow Viking.<br>
+            There's always room by the fire.
         </p>
 
         <a
             class="connect-button"
             href="steam://run/892970//+connect%20202.187.151.197:2456"
         >
-            ⚔ Enter the Realm
+            ⚔ Sail to Our Island
         </a>
 
-        <div class="server-info">
-            SERVER<br>
-            <strong>Valheim Ocean Base Server created by Jason</strong>
+        <div class="instructions">
+
+            <div class="instructions-title">
+                How to Join
+            </div>
+
+            Click the button above to launch <strong>Steam</strong>
+            and <strong>Valheim</strong>, then simply select your
+            character and enter the server password when prompted.
+
             <br>
-            <strong>This is a dedicated server hosted by Andy</strong>
+
+            <strong>May take a moment to connect.</strong>
+
+        </div>
+
+        <div class="server-info">
+
+            <div class="server-label">
+                WORLD
+            </div>
+
+            <strong>Valheim Ocean Base</strong>
+            <div class="server-subtitle">
+                Created by Jason
+            </div>
+
+            <div class="server-separator"></div>
+
+            <div class="server-label">
+                HOSTED BY
+            </div>
+
+            <strong>Andy</strong>
+            <div class="server-subtitle">
+                Dedicated Server
+            </div>
+
         </div>
 
         <div class="footer">
