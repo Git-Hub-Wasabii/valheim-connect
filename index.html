@@ -132,28 +132,69 @@
             transform: translateY(0);
         }
 
+        /* How to Join dropdown */
+
         .instructions {
-            margin: 28px auto 0;
-            padding: 18px 20px;
+            margin: 25px auto 0;
+            text-align: left;
+        }
+
+        .instructions summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 15px 18px;
 
             background: rgba(0, 0, 0, 0.20);
-            border: 1px solid rgba(190, 157, 91, 0.18);
+            border: 1px solid rgba(190, 157, 91, 0.3);
             border-radius: 4px;
+
+            color: #d5c39a;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            cursor: pointer;
+            list-style: none;
+
+            transition: background 0.25s ease;
+        }
+
+        .instructions summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .instructions summary:hover {
+            background: rgba(190, 157, 91, 0.10);
+        }
+
+        .instructions summary::after {
+            content: "+";
+            color: #c6a66b;
+            font-size: 20px;
+            transition: transform 0.25s ease;
+        }
+
+        .instructions[open] summary::after {
+            content: "−";
+        }
+
+        .instructions-content {
+            padding: 18px 20px;
+
+            background: rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(190, 157, 91, 0.18);
+            border-top: none;
+            border-radius: 0 0 4px 4px;
 
             color: #aaa995;
             font-size: 13px;
             line-height: 1.9;
+            text-align: center;
         }
 
-        .instructions-title {
-            color: #c6a66b;
-            font-size: 11px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .instructions strong {
+        .instructions-content strong {
             color: #e0d1ac;
             font-weight: normal;
         }
@@ -221,9 +262,11 @@
                 padding: 15px 22px;
                 font-size: 13px;
             }
+        }
 
-            .instructions {
-                padding: 16px 12px;
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                transition: none !important;
             }
         }
     </style>
@@ -247,14 +290,11 @@
         <div class="divider"></div>
 
         <p class="description">
-            Far beyond the mainland, a humble island<br>
-            stands against an endless sea.<br><br>
+            A tiny island, seas wide and blue,<br>
+            A little kampung built by our crew.<br><br>
 
-            Here, we built our home, weathered the storms,<br>
-            and made a kampung of our own.<br><br>
-
-            Come ashore, fellow Viking.<br>
-            There's always room by the fire.
+            Come ashore, let the fires glow,<br>
+            There's always room for one more bro.
         </p>
 
         <a
@@ -264,21 +304,32 @@
             ⚔ Enter the realm
         </a>
 
-        <div class="instructions">
+        <details class="instructions">
 
-            <div class="instructions-title">
+            <summary>
                 How to Join
+            </summary>
+
+            <div class="instructions-content">
+
+                Click the button above to launch
+                <strong>Steam</strong> and
+                <strong>Valheim</strong>.
+
+                <br><br>
+
+                Once the game launches, simply select
+                your character and enter the
+                <strong>server password</strong>
+                when prompted.
+
+                <br><br>
+
+                <strong>May take a moment to connect.</strong>
+
             </div>
 
-            Click the button above to launch <strong>Steam</strong>
-            and <strong>Valheim</strong>, then simply select your
-            character and enter the server password when prompted.
-
-            <br>
-
-            <strong>May take a moment to connect.</strong>
-
-        </div>
+        </details>
 
         <div class="server-info">
 
@@ -287,6 +338,7 @@
             </div>
 
             <strong>Valheim Ocean Base</strong>
+
             <div class="server-subtitle">
                 Created by Jason
             </div>
@@ -298,6 +350,7 @@
             </div>
 
             <strong>Andy</strong>
+
             <div class="server-subtitle">
                 Dedicated Server
             </div>
